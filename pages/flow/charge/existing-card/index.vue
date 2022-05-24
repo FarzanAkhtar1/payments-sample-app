@@ -376,7 +376,7 @@ export default class CardFlowClass extends Vue {
       }
       this.showPaymentStatus = true
     } catch (error) {
-      this.error = error
+      //this.error = error
       this.showError = true
     } finally {
       this.loading = false
