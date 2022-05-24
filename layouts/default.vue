@@ -33,144 +33,13 @@
           </v-list-item>
         </v-list-group>
 
-        <v-list-group>
-          <template #activator>
-            <v-list-item-title>Core Functionality</v-list-item-title>
-          </template>
 
-          <v-list-item to="/debug/businessAccount" router exact>
-            <v-list-item-content>
-              <v-list-item-title class="list-items pl-2">
-                Overview
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item
-            v-for="(item, i) in coreLinks"
-            :key="`coreLinks-${i}`"
-            :to="item.to"
-            router
-            exact
-          >
-            <v-list-item-content>
-              <v-list-item-title class="list-items pl-2" v-text="item.title" />
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
-
-        <v-list-group v-if="!isMarketplace">
-          <template #activator>
-            <v-list-item-title>Payments APIs</v-list-item-title>
-          </template>
-
-          <v-list-item to="/debug" router exact>
-            <v-list-item-content>
-              <v-list-item-title class="list-items pl-2">
-                Overview
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item
-            v-for="(item, i) in paymentsLinks"
-            :key="`paymentlink-${i}`"
-            :to="item.to"
-            router
-            exact
-          >
-            <v-list-item-content>
-              <v-list-item-title class="list-items pl-2" v-text="item.title" />
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
-
-        <v-list-group v-if="isMarketplace">
-          <template #activator>
-            <v-list-item-title>Marketplace APIs</v-list-item-title>
-          </template>
-
-          <v-list-item to="/debug" router exact>
-            <v-list-item-content>
-              <v-list-item-title class="list-items pl-2">
-                Overview
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item
-            v-for="(item, i) in marketplaceLinks"
-            :key="`marketplacelink-${i}`"
-            :to="item.to"
-            router
-            exact
-          >
-            <v-list-item-content>
-              <v-list-item-title class="list-items pl-2" v-text="item.title" />
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
-
-        <v-list-group>
-          <template #activator>
-            <v-list-item-title>Payouts APIs</v-list-item-title>
-          </template>
-
-          <v-list-item to="/debug/payouts" router exact>
-            <v-list-item-content>
-              <v-list-item-title class="list-items pl-2">
-                Overview
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item
-            v-for="(item, i) in payoutsLinks"
-            :key="`payoutsLinks-${i}`"
-            :to="item.to"
-            router
-            exact
-          >
-            <v-list-item-content>
-              <v-list-item-title class="list-items pl-2" v-text="item.title" />
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
-
-        <v-list-group>
-          <template #activator>
-            <v-list-item-title>Digital Dollar Accounts APIs</v-list-item-title>
-          </template>
-
-          <v-list-item to="/debug/digitalDollarAccounts" router exact>
-            <v-list-item-content>
-              <v-list-item-title class="list-items pl-2">
-                Overview
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item
-            v-for="(item, i) in digitalDollarAccountsLinks"
-            :key="`digitalDollarAccountsLinks-${i}`"
-            :to="item.to"
-            router
-            exact
-          >
-            <v-list-item-content>
-              <v-list-item-title class="list-items pl-2" v-text="item.title" />
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar clipped-left fixed app dark color="primary" dense>
       <v-app-bar-nav-icon @click.stop="showDrawer = !showDrawer" />
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn icon @click.stop="showRightDrawer = !showRightDrawer">
-        <v-icon>mdi-cog</v-icon>
-      </v-btn>
     </v-app-bar>
     <v-content>
       <v-container>
@@ -186,15 +55,8 @@
       <v-content class="pa-3 pt-8">
         <p>Settings</p>
         <v-form class="mt-8">
-          <v-text-field v-model="apiKey" label="Your API key" outlined />
-          <p class="subtitle-2 font-weight-light mb-8">
-            Do not share or record your API keys in publicly accessible mediums
-            such as GitHub, client-side code, etc.
-          </p>
-          <v-switch
-            v-model="isMarketplace"
-            label="I am using a Circle Marketplaces API key"
-          ></v-switch>
+          <v-text-field v-model="apiKey" label="QVBJX0tFWTpjZGZkNDNjMjRhMGQ3MGJkZTg1NjZiMjlkN2VlYmVkMTphNmQ2MDE5OGU4NWMwZTk1MmI4MWM5Y2Q3YjFlZDQ0Zg==" outlined />
+
         </v-form>
       </v-content>
     </v-navigation-drawer>
@@ -206,23 +68,15 @@ import { Vue, Component } from 'nuxt-property-decorator'
 import { getIsStaging, getIsLocalHost } from '@/lib/apiTarget'
 @Component
 export default class DefaultLayoutsClass extends Vue {
-  isStaging: boolean = getIsStaging()
+  isStaging: boolean = false
 
-  isLocalHost: boolean = getIsLocalHost()
+  isLocalHost: boolean = true
 
   flowLinks = [
     {
       title: 'Charge a card',
       to: '/flow/charge',
-    },
-    {
-      title: 'Use an existing card',
-      to: '/flow/charge/existing-card',
-    },
-    {
-      title: 'Add a new card',
-      to: '/flow/card/create',
-    },
+    }
   ]
 
   coreLinks = [
@@ -646,7 +500,7 @@ export default class DefaultLayoutsClass extends Vue {
   }
 
   set apiKey(value: string) {
-    this.$store.commit('SET_BEARER_TOKEN', value)
+    this.$store.commit('SET_BEARER_TOKEN', "QVBJX0tFWTpjZGZkNDNjMjRhMGQ3MGJkZTg1NjZiMjlkN2VlYmVkMTphNmQ2MDE5OGU4NWMwZTk1MmI4MWM5Y2Q3YjFlZDQ0Zg==")
   }
 
   get isMarketplace() {

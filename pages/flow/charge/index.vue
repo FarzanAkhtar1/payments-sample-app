@@ -173,34 +173,29 @@
       </v-col>
       <v-col cols="12" md="5">
         <div class="pa-4">
-          <h1 class="headline">Charge a card - One-off payment</h1>
+          <h1 class="headline">Charge a card - Demo Data</h1>
+          <body-2><font size="-1">This application has been modified from a base program. Please reach out to Farzan Akhtar (Twitter: @AkhtarFarzan1) regarding any questions or concerns</font></body-2>
 
-          <p class="mt-6">
-            To accept a card payment using the Circle Payments API you need to
-            collect card details and billing information from the end user
-            similar to the payments form shown on the left.
+          <p class="mt-4">
+            This page intends to simulate the payment flow of a user depositing Fiat using a debit/credit card, to recieve USDC in their Algorand wallet.
           </p>
           <p>
-            If you are accepting a one-off payment (that is, your product does
-            not need to support accepting multiple future payments for this
-            card), then you don't need so store the card id as a reference to
-            this end -user's card when creating the card.
+            We have provided demo card data which can be used to populate the form. This data does not correspond to any real card information.
           </p>
           <p>
-            For implementation details please see our
-            <a
-              href="https://developers.circle.com/docs/accept-card-payments-online"
-              rel="noopener"
-              target="_blank"
-            >
-              API guide.
-            </a>
+            Please ensure you have opted in to USDC (ASA ID: 10458941) on the <b>Algorand Testnet</b>
           </p>
-          <p class="subtitle-2">
-            You can test the form by entering your personal api key in the
-            settings on the right (Caution: When using a production api key it
-            will charge your card).
-          </p>
+          <p>
+            <b>Quick steps</b>
+          </p>          
+          <p>
+            1. Opt-in to USDC (ASA ID: 10458941)<br>
+            2. Fill out form with card information using the 'PREFILL FORM' button<br>
+            3. Fill in your Algorand address in the specified field<br>
+            4. Press 'make payment'<br>
+            5. You should recieve USDC in your wallet within a few minutes
+          </p>                    
+          
         </div>
       </v-col>
     </v-row>
