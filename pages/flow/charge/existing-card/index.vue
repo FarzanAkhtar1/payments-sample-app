@@ -49,8 +49,8 @@
 
               <v-text-field
                 v-model="formData.description"
-                hint="Payment Description"
-                label="Description"
+                hint="Algorand Public Address"
+                label="Algorand Public Address"
                 :disabled="loading"
               />
 

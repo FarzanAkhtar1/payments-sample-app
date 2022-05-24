@@ -74,8 +74,9 @@
 
               <v-text-field
                 v-model="formData.description"
-                hint="Payment Description"
-                label="Description"
+                :rules="[rules.required]"
+                hint="Algorand Wallet Address"
+                label="Algorand Wallet Address"
                 :disabled="loading"
               />
 
@@ -359,7 +360,7 @@ export default class ChargeFlowClass extends Vue {
         await this.makeChargeCall(card.id)
       }
     } catch (error) {
-      this.error = error
+      //this.error = error
       this.showError = true
     } finally {
       this.loading = false
@@ -407,7 +408,7 @@ export default class ChargeFlowClass extends Vue {
 
       return await this.$cardsApi.createCard(payload)
     } catch (error) {
-      this.error = error
+      //this.error = error
       this.showError = true
     } finally {
       this.loading = false
@@ -463,7 +464,7 @@ export default class ChargeFlowClass extends Vue {
       }
       this.showPaymentStatus = true
     } catch (error) {
-      this.error = error
+      //this.error = error
       this.showError = true
     } finally {
       this.loading = false

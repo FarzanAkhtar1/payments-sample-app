@@ -35,8 +35,8 @@
 
           <v-text-field
             v-model="formData.description"
-            hint="Payment Description"
-            label="Description"
+            hint="asdasdasdasdas"
+            label="asdasdsadasdas"
           />
 
           <v-text-field
@@ -221,7 +221,7 @@ export default class CreatePaymentClass extends Vue {
 
       await this.$marketplaceApi.createPayment(payload)
     } catch (error) {
-      this.error = error
+      //this.error = error
       this.showError = true
     } finally {
       this.loading = false

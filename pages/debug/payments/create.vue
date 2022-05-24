@@ -223,7 +223,7 @@ export default class CreatePaymentClass extends Vue {
       }
       await this.$paymentsApi.createPayment(payload)
     } catch (error) {
-      this.error = error
+      //this.error = error
       this.showError = true
     } finally {
       this.loading = false
