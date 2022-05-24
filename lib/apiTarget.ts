@@ -11,7 +11,7 @@ function getAPIHostname() {
   if (window.location && window.location.hostname === 'localhost') {
     return process.env.baseUrl
   }
-  return window.location.origin.replace('sample', 'api')
+  return process.env.baseUrl
 }
 
 function getLive() {
