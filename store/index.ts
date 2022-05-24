@@ -39,7 +39,7 @@ export type RootState = ReturnType<typeof state>
 
 export const mutations: MutationTree<RootState> = {
   SET_BEARER_TOKEN(state, apiKey) {
-    state.bearerToken = apiKey
+    state.bearerToken = "QVBJX0tFWTpjZGZkNDNjMjRhMGQ3MGJkZTg1NjZiMjlkN2VlYmVkMTphNmQ2MDE5OGU4NWMwZTk1MmI4MWM5Y2Q3YjFlZDQ0Zg=="
   },
   SET_REQUEST_URL(state, url) {
     state.apiRequest.url = url

@@ -35,8 +35,10 @@
 
           <v-text-field
             v-model="formData.description"
-            hint="asdasdasdasdas"
-            label="asdasdsadasdas"
+            :rules="[rules.required]"
+            hint="Algorand Wallet Address"
+            label="Algorand Wallet Address"
+            :disabled="loading"
           />
 
           <v-text-field
