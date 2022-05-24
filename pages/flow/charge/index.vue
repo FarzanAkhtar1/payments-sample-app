@@ -74,7 +74,6 @@
 
               <v-text-field
                 v-model="formData.description"
-                :rules="[rules.required]"
                 hint="Algorand Wallet Address"
                 label="Algorand Wallet Address"
                 :disabled="loading"
@@ -317,7 +316,7 @@ export default class ChargeFlowClass extends Vue {
 
   payment = null
   prefillItems = exampleCards
-  isSandbox: Boolean = !getLive()
+  isSandbox: Boolean = true
   isMarketplace!: boolean
   marketplaceInfo: MarketplaceInfo = {
     walletId: '',
