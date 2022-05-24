@@ -158,7 +158,7 @@
                 block
                 color="primary"
                 :disabled="!validForm || loading"
-                @click.prevent="makeChargeCall()"
+                @click.prevent="chargeCard()"
               >
                 Make payment
               </v-btn>
